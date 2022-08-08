@@ -22,3 +22,4 @@ in `src/db/AppDataSource.ts`
 
 ## TODO:
 - use TypeORM session storage
+- add cleaning outdated records from DB
