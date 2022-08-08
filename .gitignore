@@ -1,0 +1,7 @@
+.idea/
+pgdata/
+pgadmin/
+dist/
+node_modules/
+src/tsoa_generated_files/
+/.env

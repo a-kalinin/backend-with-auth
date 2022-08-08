@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  node:
+    build:
+      target: production-image
+    command: node dist/server.js

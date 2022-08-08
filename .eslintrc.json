@@ -1,0 +1,74 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "import/prefer-default-export": 1,
+    "linebreak-style": 0,
+    "no-console": ["error", { "allow": ["warn", "info", "error"] }],
+    "import/extensions": ["error", "always", { "ts": "never",  "js": "never" }],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0, "maxBOF": 0 }],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-var-requires": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "module": "readonly"
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/db/entities/**",
+        "src/db/views/**",
+        "src/db/entitiesAbstract/**"
+      ],
+      "rules": {
+        "import/no-unresolved": 0,
+        "import/prefer-default-export": 0,
+        "class-methods-use-this": 0
+      }
+    },
+     {
+      "files": ["src/db/migrations/**"],
+      "rules": {
+        "import/prefer-default-export": 0,
+        "indent": 0,
+        "quotes": 0,
+        "semi": 0,
+        "padded-blocks": 0,
+        "class-methods-use-this": 0
+      }
+    },
+    {
+      "files": ["**/**.test.**"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": {}
+    },
+    {
+      "files": ["./src/tsoaRouters/**/**Route.ts"],
+      "rules": {
+        "class-methods-use-this": 0,
+        "import/prefer-default-export": 0
+      }
+    }
+  ]
+}

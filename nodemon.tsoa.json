@@ -1,0 +1,10 @@
+{
+    "verbose": true,
+    "ignore": ["**/**.test.**", "src/tsoa_generated_files/*"],
+    "watch": ["src/"],
+    "ext": "js,ts,json",
+    "exec": "tsoa spec-and-routes",
+    "execMap": {
+        "ts": "node --experimental-specifier-resolution=node --loader ts-node/esm --inspect=0.0.0.0:9229 --nolazy -r ts-node/register"
+    }
+}
