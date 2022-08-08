@@ -18,3 +18,7 @@ After initialization:
 in `src/db/AppDataSource.ts`
 - You have to create `.env` file with settings
  you can find in `.env.example`
+
+
+## TODO:
+- use TypeORM session storage
